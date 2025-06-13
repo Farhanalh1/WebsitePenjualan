@@ -1,7 +1,7 @@
 'use client'
 
 import { title } from "process";
-import { Dialog, DialogClose } from "./dialog";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "./dialog";
 
 interface ModalProps {
     title: string;
@@ -22,7 +22,19 @@ ModalProps) => {
 
 return (
     <Dialog open={isOpen} onOpenChange={onChange}>
-
+        <DialogContent>
+            <DialogHeader>
+                <DialogTitle>
+                    {title}
+                </DialogTitle>
+                <DialogDescription>
+                    {description}
+                </DialogDescription>
+            </DialogHeader>
+            <div>{children}</div>
+        </DialogContent>
     </Dialog>
 )
-    }
+}
+
+export default Modal
