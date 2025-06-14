@@ -34,10 +34,11 @@ const onSubmit= async (values: z.infer<typeof formSchema>) => {
         setLoading(true)
 
         const response = await  axios.post("/api/stores", values);
-        window.location.assign(`/${response.data.id}`)
         console.log(response.data);
     } catch (error) {
       console.log(error)
+    } finally {
+        setLoading(false)
     }
 };
 
@@ -62,6 +63,7 @@ const onSubmit= async (values: z.infer<typeof formSchema>) => {
                                 <Input 
                                 placeholder='Nama Toko'
                                 {...field}
+                                disabled={loading}
                                 />
                             </FormControl>
                             <FormMessage />
@@ -70,10 +72,11 @@ const onSubmit= async (values: z.infer<typeof formSchema>) => {
                     />
                     <div className="pt-6 space-x-2 flex items-center justify-end w-full">
                         <Button 
+                        disabled={loading}
                         variant="outline"
                         onClick={storeModal.onClose}
                         >Cancel</Button>
-                        <Button type="submit">Continue</Button>
+                        <Button disabled= {loading} type="submit">Continue</Button>
                        
                     </div>
                 </form>
