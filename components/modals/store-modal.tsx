@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react';
 import * as z from 'zod'
 import { useStoreModal } from "@/hooks/use-store-modal";
 import Modal from "../ui/modal";
@@ -13,12 +14,11 @@ const formSchema = z.object({
     name: z.string().min(1),
 });
 
-const onSubmit= async (values: z.infer<typeof formSchema>) => {
-    //TODO Buat Toko
-    console.log(values)
-}
+
 
 export const StoreModal = () => {
+    const [loading, setLoading]= useState(false)
+
     const storeModal = useStoreModal();
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -26,7 +26,16 @@ export const StoreModal = () => {
     defaultValues: {
         name: "",
     },
-})
+});
+
+const onSubmit= async (values: z.infer<typeof formSchema>) => {
+    try {
+
+    } catch (error) {
+      console.log(error)
+    }
+    console.log(values);
+};
 
     return (
         <Modal
