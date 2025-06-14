@@ -6,7 +6,7 @@ import Modal from "@/components/ui/modal";
 import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 
-export default function Home() {
+const SetupPage = () => {
   return (
     <div className="p-4">
       <Modal title="Test Title" description="test Description"
@@ -16,3 +16,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default SetupPage
