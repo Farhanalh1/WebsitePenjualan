@@ -35,10 +35,10 @@ const onSubmit= async (values: z.infer<typeof formSchema>) => {
 
         const response = await  axios.post("/api/stores", values);
         window.location.assign(`/${response.data.id}`)
+        console.log(response.data);
     } catch (error) {
       console.log(error)
     }
-    console.log(values);
 };
 
     return (
