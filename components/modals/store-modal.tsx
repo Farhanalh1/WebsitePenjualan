@@ -49,7 +49,7 @@ const onSubmit= async (values: z.infer<typeof formSchema>) => {
     return (
         <Modal
             title="Buat Store"
-            description="Tambahkan Store untu membuat produk dan kategori"
+            description="Tambahkan Store untuK membuat produk dan kategori"
             isOpen={storeModal.isOpen}
             onClose={storeModal.onClose}
         >
