@@ -19,7 +19,7 @@ const StoreSwitcher = ({
 }: StoreSwitcherProps) => {
     const storeModal = useStoreModal();
     const params = useParams<{storeId:string}>();
-    const router = useRouter
+    const router = useRouter()
 
     const formattedItems = items.map((item) => ({
         label: item.name,
@@ -32,6 +32,8 @@ const StoreSwitcher = ({
     const [open, setOpen] = useState(false)
 
     const onStoreSelect = (store:{value: string, label: string}) => {
+        setOpen(false);
+        router.push(`/${store.value}`)
 
 
     }
