@@ -1,6 +1,7 @@
 'use client'
 
 import { cn } from "@/lib/utils"
+import Link from "next/link";
 import { useParams, usePathname } from "next/navigation"
 
 export function MainNav({
@@ -15,7 +16,7 @@ export function MainNav({
         {
             href: `/${params.storeId}/settings`,
             label: 'Settings',
-            Active: pathname === `/${params.storeId}/settings`,
+            active: pathname === `/${params.storeId}/settings`,
         }
     ]
     return (
@@ -23,7 +24,19 @@ export function MainNav({
             "flex items-center space-x-4 lg:space-x-6",
             className
         )}>
-            This is Main Nav
+            {routes.map((route) => (
+                <Link
+                key={route.href}
+                href={route.href}
+                className= {cn(
+                    "text-sm font-medium transition-colors hover:text-primary",
+                    routes.active ? "text-black dark: text-white" : 
+                    "text-muted-foreground"
+                )}
+                >
+                {route.label}
+                </Link>
+            ))}
         </nav>
     )
 }
