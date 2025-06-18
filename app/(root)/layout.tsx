@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import db from "@/lib/db";
+import Navbar from "@/components/navbar";
 
 export default async function SetupLayout({
     children,
@@ -24,6 +25,7 @@ export default async function SetupLayout({
 
     return (
         <>
+        <Navbar></Navbar>
         {children}
         </>
     )
