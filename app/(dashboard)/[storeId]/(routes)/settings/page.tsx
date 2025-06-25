@@ -1,3 +1,4 @@
+import db from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import React from "react";
@@ -8,7 +9,7 @@ interface SettingsPageProps {
     }
 }
 
-const SettingsPage: React.FC<SettingsPageProps> = ({
+const SettingsPage: React.FC<SettingsPageProps> = async ({
     params
 }) => {
 
@@ -17,6 +18,12 @@ const SettingsPage: React.FC<SettingsPageProps> = ({
     if (!userId) {
         redirect('/sign-in')
     }
+
+    const store = await db.store.findFirst({
+        where:{
+            id: params.storeId
+        }
+    })
 
     return(
         <div>
