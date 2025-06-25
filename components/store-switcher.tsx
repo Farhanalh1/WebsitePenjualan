@@ -7,7 +7,7 @@ import { useStoreModal } from "@/hooks/use-store-modal";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { ChevronsUpDown, Store as StoreIcon } from "lucide-react";
+import { Check, ChevronsUpDown, Store as StoreIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "./ui/command";
 
@@ -70,7 +70,12 @@ const StoreSwitcher = ({
                         onSelect={() => onStoreSelect(store)}
                         claassName="text-sm"
                         >
-                            <StoreIcon></StoreIcon>
+                            <StoreIcon className="mr-2 h-4 w-4">
+                                {store.label}
+                                <Check>
+                                    
+                                </Check>
+                            </StoreIcon>
                         </CommandItem>
                     ))}
                 </CommandGroup>
