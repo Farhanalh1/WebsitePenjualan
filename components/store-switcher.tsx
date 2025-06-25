@@ -57,7 +57,7 @@ const StoreSwitcher = ({
                 <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50"></ChevronsUpDown>
             </Button>
             </PopoverTrigger>
-            <PopoverContent>
+            <PopoverContent className="w-[200px] p-0">
                 <Command>
                     <CommandInput placeholder="Cari Toko">
 
