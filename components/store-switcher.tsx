@@ -9,7 +9,7 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import { Check, ChevronsUpDown, Store as StoreIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "./ui/command";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "./ui/command";
 
 type PopOverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
 
@@ -59,7 +59,8 @@ const StoreSwitcher = ({
             </PopoverTrigger>
             <PopoverContent className="w-[200px] p-0">
                 <Command>
-                    <CommandInput placeholder="Cari Toko">
+                    <CommandList>
+                    <CommandInput placeholder="Cari Toko" />
                 <CommandEmpty>
                     Toko Tidak Ditemukan
                 </CommandEmpty>
@@ -83,7 +84,7 @@ const StoreSwitcher = ({
                         </CommandItem>
                     ))}
                 </CommandGroup>
-                    </CommandInput>
+                </CommandList>
                 </Command>
             </PopoverContent>
         </Popover>
