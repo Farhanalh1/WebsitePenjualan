@@ -70,7 +70,7 @@ const StoreSwitcher = ({
                         onSelect={() => onStoreSelect(store)}
                         claassName="text-sm"
                         >
-
+                            <StoreIcon></StoreIcon>
                         </CommandItem>
                     ))}
                 </CommandGroup>
