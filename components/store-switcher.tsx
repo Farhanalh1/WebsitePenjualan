@@ -68,6 +68,7 @@ const StoreSwitcher = ({
                         <CommandItem
                         key={store.value}
                         onSelect={() => onStoreSelect(store)}
+                        claassName="text-sm"
                         >
 
                         </CommandItem>
