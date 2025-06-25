@@ -32,7 +32,10 @@ const SettingsPage: React.FC<SettingsPageProps> = async ({
 
     return(
         <div>
-            Ini Page Setting
+            <div>
+                <Settingsform />
+            </div>
+
         </div>
     );
 }
