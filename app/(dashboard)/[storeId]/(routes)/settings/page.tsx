@@ -26,6 +26,10 @@ const SettingsPage: React.FC<SettingsPageProps> = async ({
         }
     })
 
+    if (!store) {
+        redirect('/')
+    }
+
     return(
         <div>
             Ini Page Setting
