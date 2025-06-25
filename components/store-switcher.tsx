@@ -1,7 +1,7 @@
 'use client'
 
 import { Popover, PopoverTriggerProps } from "@radix-ui/react-popover";
-import { PopoverTrigger } from "./ui/popover";
+import { PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Store } from "@/lib/generated/prisma";
 import { useStoreModal } from "@/hooks/use-store-modal";
 import { useParams, useRouter } from "next/navigation";
@@ -56,6 +56,7 @@ const StoreSwitcher = ({
                 <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50"></ChevronsUpDown>
             </Button>
             </PopoverTrigger>
+            <PopoverContent></PopoverContent>
         </Popover>
     );
 }
