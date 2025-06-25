@@ -2,7 +2,7 @@
 
 import { Popover, PopoverTriggerProps } from "@radix-ui/react-popover";
 import { PopoverContent, PopoverTrigger } from "./ui/popover";
-import { Store } from "@/lib/generated/prisma";
+import { Store } from "@prisma/client";
 import { useStoreModal } from "@/hooks/use-store-modal";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
@@ -29,7 +29,7 @@ const StoreSwitcher = ({
         label: item.name,
         value: item.id
 
-    }))
+    }));
 
     const currentStore = formattedItems.find((item) => item.value === params.storeId)
 
@@ -38,8 +38,6 @@ const StoreSwitcher = ({
     const onStoreSelect = (store:{value: string, label: string}) => {
         setOpen(false);
         router.push(`/${store.value}`)
-
-
     }
 
     return (
@@ -52,9 +50,9 @@ const StoreSwitcher = ({
             aria-expanded={open}
             aria-label="Pilih Toko"
             className={cn("w-[200px] justify-between",className)}>
-                <StoreIcon className="mr-2 h-4 w-4"></StoreIcon>
-                {currentStore?.label}
-                <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50"></ChevronsUpDown>
+                <StoreIcon className="mr-2 h-4 w-4" /> {/* StoreIcon tidak memiliki children */}
+                {currentStore?.label || "Pilih Toko"} {/* Menambahkan fallback text jika currentStore tidak ada */}
+                <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50" />
             </Button>
             </PopoverTrigger>
             <PopoverContent className="w-[200px] p-0">
@@ -71,21 +69,19 @@ const StoreSwitcher = ({
                         onSelect={() => onStoreSelect(store)}
                         className="text-sm"
                         >
-                            <StoreIcon className="mr-2 h-4 w-4">
-                                {store.label}
-                                <Check
+                            <StoreIcon className="mr-2 h-4 w-4" /> {/* StoreIcon sebagai elemen terpisah */}
+                            {store.label} {/* Teks label */}
+                            <Check
                                 className={cn(
                                     "ml-auto h-4 w-4",
                                     currentStore?.value === store.value ? "opacity-100" : "opacity-0"
                                 )}
-                                >    
-                                </Check>
-                            </StoreIcon>
+                            />
                         </CommandItem>
                     ))}
                 </CommandGroup>
                 </CommandList>
-                <CommandSeparator  />
+                <CommandSeparator />
                 <CommandList>
                     <CommandGroup>
                         <CommandItem
