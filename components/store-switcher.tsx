@@ -63,7 +63,9 @@ const StoreSwitcher = ({
                 <CommandEmpty>
                     Toko Tidak Ditemukan
                 </CommandEmpty>
-                <CommandGroup></CommandGroup>
+                <CommandGroup heading="Toko">
+                    
+                </CommandGroup>
                     </CommandInput>
                 </Command>
             </PopoverContent>
