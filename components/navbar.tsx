@@ -3,14 +3,20 @@ import { MainNav } from "./main-nav";
 import StoreSwitcher from "./store-switcher";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/dist/server/api-utils";
+import db from "@/lib/db";
 
-const Navbar = () => {
+const Navbar = async () => {
     const {userId} = auth();
 
         if (!userId) {
             redirect('/sign-in')
         }
-    }
+
+        const stores = await db.store.findMany({
+            where: {
+                userId
+            }
+        })
 
     return (
         <div className="border-b">
@@ -23,6 +29,6 @@ const Navbar = () => {
         </div>
         </div>
     );
-}
+};
 
 export default Navbar;
