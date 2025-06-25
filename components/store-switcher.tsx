@@ -7,7 +7,7 @@ import { useStoreModal } from "@/hooks/use-store-modal";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { Store as StoreIcon } from "lucide-react";
+import { ChevronsUpDown, Store as StoreIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type PopOverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
@@ -52,6 +52,8 @@ const StoreSwitcher = ({
             aria-label="Pilih Toko"
             className={cn("w-[200px] justify-between",className)}>
                 <StoreIcon className="mr-2 h-4 w-4"></StoreIcon>
+                Current Store
+                <ChevronsUpDown></ChevronsUpDown>
             </Button>
             </PopoverTrigger>
         </Popover>
