@@ -60,7 +60,9 @@ const StoreSwitcher = ({
             <PopoverContent className="w-[200px] p-0">
                 <Command>
                     <CommandInput placeholder="Cari Toko">
-                <CommandEmpty></CommandEmpty>
+                <CommandEmpty>
+                    Toko Tidak Ditemukan
+                </CommandEmpty>
                     </CommandInput>
                 </Command>
             </PopoverContent>
