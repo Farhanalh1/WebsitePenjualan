@@ -94,7 +94,7 @@ const StoreSwitcher = ({
                             storeModal.onOpen()
                         }}
                         >
-                            <PlusCircle className=""/>
+                            <PlusCircle className="mr-2 h-5 w-5" />
                         </CommandItem>
                     </CommandGroup>
                 </CommandList>
