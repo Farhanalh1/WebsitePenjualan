@@ -88,8 +88,13 @@ const StoreSwitcher = ({
                 <CommandSeparator  />
                 <CommandList>
                     <CommandGroup>
-                        <CommandItem>
-                            
+                        <CommandItem
+                        onSelect={() =>{
+                            setOpen(false);
+                            storeModal.onOpen()
+                        }}
+                        >
+
                         </CommandItem>
                     </CommandGroup>
                 </CommandList>
