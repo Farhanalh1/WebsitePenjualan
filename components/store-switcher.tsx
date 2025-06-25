@@ -65,8 +65,10 @@ const StoreSwitcher = ({
                 </CommandEmpty>
                 <CommandGroup heading="Toko">
                     {formattedItems.map((store) => (
-                        <CommandItem>
-                            
+                        <CommandItem
+                        key=
+                        >
+
                         </CommandItem>
                     ))}
                 </CommandGroup>
