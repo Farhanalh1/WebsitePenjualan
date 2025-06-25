@@ -53,7 +53,7 @@ const StoreSwitcher = ({
             className={cn("w-[200px] justify-between",className)}>
                 <StoreIcon className="mr-2 h-4 w-4"></StoreIcon>
                 Current Store
-                <ChevronsUpDown></ChevronsUpDown>
+                <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50"></ChevronsUpDown>
             </Button>
             </PopoverTrigger>
         </Popover>
