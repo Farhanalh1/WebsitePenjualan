@@ -88,7 +88,9 @@ const StoreSwitcher = ({
                 <CommandSeparator  />
                 <CommandList>
                     <CommandGroup>
-                        
+                        <CommandItem>
+                            
+                        </CommandItem>
                     </CommandGroup>
                 </CommandList>
             </Command>
