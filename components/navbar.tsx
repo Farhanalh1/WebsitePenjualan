@@ -1,8 +1,17 @@
 import { UserButton } from "@clerk/nextjs";
 import { MainNav } from "./main-nav";
 import StoreSwitcher from "./store-switcher";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/dist/server/api-utils";
 
 const Navbar = () => {
+    const {userId} = auth();
+
+        if (!userId) {
+            redirect('/sign-in')
+        }
+    }
+
     return (
         <div className="border-b">
         <div className="flex h-16 items-center px-4">
