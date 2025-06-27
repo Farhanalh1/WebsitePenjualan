@@ -73,7 +73,10 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
                     />
 
                 </div>
-                <Button>
+                <Button
+                disabled={loading}
+                type="submit"
+                >
                     Save
                 </Button>
             </form>
