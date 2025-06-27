@@ -56,7 +56,9 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
         </div>
         <Separator />
         <Form {...form}>
-            <form></form>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
+
+            </form>
         </Form>
         </>
     )
