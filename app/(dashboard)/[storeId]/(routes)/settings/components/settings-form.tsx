@@ -7,6 +7,7 @@ import { Heading } from "@/components/ui/heading"
 import { Separator } from "@/components/ui/separator"
 import { Store } from "@prisma/client"
 import { Trash } from "lucide-react"
+import { useForm } from 'react-hook-form'
 
 interface SettingsFormProps {
     initialData: Store
@@ -21,6 +22,8 @@ type SettingsFormValues = z.infer<typeof formSchema>
 export const Settingsform: React.FC<SettingsFormProps> = ({
     initialData
 }) => {
+
+    const form = useForm
     return (
         <>
         <div className=" flex items-center justify-between">
