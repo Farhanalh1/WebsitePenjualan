@@ -13,8 +13,10 @@ interface SettingsFormProps {
 }
 
 const formSchema = z.object({
-    initialData: store().min(1)
+    name: z.string().min(1)
 })
+
+type SettingsFormValues = z.infer<typeof formSchema>
 
 export const Settingsform: React.FC<SettingsFormProps> = ({
     initialData
