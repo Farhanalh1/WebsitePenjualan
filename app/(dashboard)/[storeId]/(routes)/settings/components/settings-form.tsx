@@ -11,6 +11,7 @@ import { Store } from "@prisma/client"
 import { Trash } from "lucide-react"
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Form } from '@/components/ui/form'
 
 interface SettingsFormProps {
     initialData: Store
@@ -35,7 +36,7 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
     });
 
     const onSubmit = async (data: SettingsFormValues) => {
-        console.log()
+        console.log(data)
     }
 
     return (
@@ -54,6 +55,9 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
             </Button>
         </div>
         <Separator />
+        <Form>
+            
+        </Form>
         </>
     )
 }
