@@ -6,7 +6,9 @@ interface SettingsFormProps {
     initialData: Store
 }
 
-export const Settingsform = () => {
+export const Settingsform: React.FC<SettingsFormProps> = ({
+    initialData
+}) => {
     return (
         <div>
             Ini Settings Form
