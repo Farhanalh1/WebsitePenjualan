@@ -1,6 +1,8 @@
 'use client'
 
 import * as z from 'zod'
+import { useState } from 'react'
+
 
 import { Button } from "@/components/ui/button"
 import { Heading } from "@/components/ui/heading"
@@ -24,9 +26,13 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
     initialData
 }) => {
 
+    const [open,setOpen] = useState
+
     const form = useForm<SettingsFormValues>({
-        resolver: zodResolver
-    })
+        resolver: zodResolver(formSchema),
+        defaultValues: initialData,
+    });
+
     return (
         <>
         <div className=" flex items-center justify-between">
