@@ -66,14 +66,16 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
                         <FormItem>
                             <FormLabel>Name</FormLabel>
                             <FormControl>
-                                <Input placeholder="Nama Toko" disabled={loading} />
+                                <Input placeholder="Nama Toko" disabled={loading} {...field} />
                             </FormControl>
                         </FormItem>
     )}
                     />
 
                 </div>
-
+                <Button>
+                    Save
+                </Button>
             </form>
         </Form>
         </>
