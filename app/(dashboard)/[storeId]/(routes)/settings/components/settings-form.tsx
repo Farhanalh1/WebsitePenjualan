@@ -12,9 +12,10 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
 }) => {
     return (
         <div className=" flex items-center justify-between">
-            <Heading>
-                
-            </Heading>
+            <Heading
+            title="Settings"
+            description="Atur Toko"
+            />
         </div>
     )
 }
