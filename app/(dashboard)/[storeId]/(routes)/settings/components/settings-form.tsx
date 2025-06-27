@@ -21,6 +21,7 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
             <Button
             variant="destructive"
             size="sm"
+            onClick={() => {}}
             >
                 <Trash className="h-4 w-4" />
             </Button>
