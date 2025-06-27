@@ -19,6 +19,8 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
             description="Atur Toko"
             />
             <Button
+            variant="destructive"
+            size="sm"
             >
                 <Trash className="h-4 w-4" />
             </Button>
