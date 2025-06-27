@@ -11,7 +11,7 @@ import { Store } from "@prisma/client"
 import { Trash } from "lucide-react"
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Form } from '@/components/ui/form'
+import { Form, FormField } from '@/components/ui/form'
 
 interface SettingsFormProps {
     initialData: Store
@@ -57,6 +57,12 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
         <Separator />
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
+                <div className="grid grid-cols-3 gap-8">
+                    <FormField>
+                        
+                    </FormField>
+
+                </div>
 
             </form>
         </Form>
