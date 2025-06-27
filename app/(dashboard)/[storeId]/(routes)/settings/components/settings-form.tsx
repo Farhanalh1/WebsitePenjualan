@@ -18,8 +18,9 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
             title="Settings"
             description="Atur Toko"
             />
-            <Button>
-                <Trash></Trash>
+            <Button
+            >
+                <Trash className="h-4 w-4" />
             </Button>
         </div>
     )
