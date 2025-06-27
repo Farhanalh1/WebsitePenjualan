@@ -48,6 +48,7 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
             description="Atur Toko"
             />
             <Button
+            disabled={loading}
             variant="destructive"
             size="sm"
             onClick={() => {}}
@@ -68,9 +69,7 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
                             <FormControl>
                                 <Input placeholder="Nama Toko" disabled={loading} {...field} />
                             </FormControl>
-                            <FormMessage>
-                                
-                            </FormMessage>
+                            <FormMessage />
                         </FormItem>
     )}
                     />
