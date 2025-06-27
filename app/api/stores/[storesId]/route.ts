@@ -13,8 +13,11 @@ export async function PATCH (
         const { name } = body;
 
         if (!userId) {
-            return new NextResponse("Unauthenticated")
+            return new NextResponse("Unauthenticated", {status: 400})
         }
+            if (!name) {
+                return new NextResponse("Harus menginput nama ")
+            }
 
     } catch (error) {
         console.log('[STORE_PATCH]', error)
