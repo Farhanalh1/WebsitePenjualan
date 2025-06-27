@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator"
 import { Store } from "@prisma/client"
 import { Trash } from "lucide-react"
 import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 interface SettingsFormProps {
     initialData: Store
@@ -23,7 +24,9 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
     initialData
 }) => {
 
-    const form = useForm
+    const form = useForm<SettingsFormValues>({
+        resolver: zodResolver
+    })
     return (
         <>
         <div className=" flex items-center justify-between">
