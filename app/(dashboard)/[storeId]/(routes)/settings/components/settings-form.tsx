@@ -1,5 +1,7 @@
 'use client'
 
+import * as z from 'zod'
+
 import { Button } from "@/components/ui/button"
 import { Heading } from "@/components/ui/heading"
 import { Separator } from "@/components/ui/separator"
@@ -9,6 +11,8 @@ import { Trash } from "lucide-react"
 interface SettingsFormProps {
     initialData: Store
 }
+
+const formSchema = z
 
 export const Settingsform: React.FC<SettingsFormProps> = ({
     initialData
