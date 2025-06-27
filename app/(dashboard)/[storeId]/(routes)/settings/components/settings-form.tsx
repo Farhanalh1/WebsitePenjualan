@@ -1,7 +1,7 @@
 'use client'
 
+import { Heading } from "@/components/ui/heading"
 import { Store } from "@prisma/client"
-import { Heading } from "lucide-react"
 
 interface SettingsFormProps {
     initialData: Store
