@@ -12,7 +12,9 @@ interface SettingsFormProps {
     initialData: Store
 }
 
-const formSchema = z
+const formSchema = z.object({
+    initialData: store().min(1)
+})
 
 export const Settingsform: React.FC<SettingsFormProps> = ({
     initialData
