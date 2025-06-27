@@ -34,6 +34,10 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
         defaultValues: initialData,
     });
 
+    const onSubmit = async (data: SettingsFormValues) => {
+        console.log()
+    }
+
     return (
         <>
         <div className=" flex items-center justify-between">
