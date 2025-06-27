@@ -26,7 +26,8 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
     initialData
 }) => {
 
-    const [open,setOpen] = useState
+    const [open,setOpen] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const form = useForm<SettingsFormValues>({
         resolver: zodResolver(formSchema),
