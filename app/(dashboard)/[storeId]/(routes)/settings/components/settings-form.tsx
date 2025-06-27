@@ -11,7 +11,7 @@ import { Store } from "@prisma/client"
 import { Trash } from "lucide-react"
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Form, FormField, FormItem, FormLabel } from '@/components/ui/form'
+import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form'
 
 interface SettingsFormProps {
     initialData: Store
@@ -64,6 +64,9 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
                     render={({field}) =>{
                         <FormItem>
                             <FormLabel>Name</FormLabel>
+                            <FormControl>
+                                
+                            </FormControl>
                         </FormItem>
                     }}
                     />
