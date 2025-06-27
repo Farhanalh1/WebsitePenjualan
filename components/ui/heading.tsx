@@ -3,6 +3,11 @@ interface HeadingProps {
     description: string;
 }
 
-export const Heading: React.FC<HeadingProps> = () => ({
-    
-})
+export const Heading: React.FC<HeadingProps> = ({
+    title,
+    description
+}) => {
+    return (
+        <
+    )
+}
