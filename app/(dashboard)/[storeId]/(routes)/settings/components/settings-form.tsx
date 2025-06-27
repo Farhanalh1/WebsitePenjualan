@@ -58,9 +58,13 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
                 <div className="grid grid-cols-3 gap-8">
-                    <FormField>
-                        
-                    </FormField>
+                    <FormField
+                    control={form.control}
+                    name="name"
+                    render={({field}) =>{
+                        <
+                    }}
+                    />
 
                 </div>
 
