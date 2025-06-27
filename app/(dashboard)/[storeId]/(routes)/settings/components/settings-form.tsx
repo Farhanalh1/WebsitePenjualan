@@ -10,7 +10,7 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
     initialData
 }) => {
     return (
-        <div>
+        <div className=" flex items-center justify-between">
             Ini Settings Form
         </div>
     )
