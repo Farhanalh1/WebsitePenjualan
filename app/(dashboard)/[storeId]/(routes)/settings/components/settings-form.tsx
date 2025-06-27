@@ -11,7 +11,7 @@ import { Store } from "@prisma/client"
 import { Trash } from "lucide-react"
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 
 interface SettingsFormProps {
@@ -68,6 +68,9 @@ export const Settingsform: React.FC<SettingsFormProps> = ({
                             <FormControl>
                                 <Input placeholder="Nama Toko" disabled={loading} {...field} />
                             </FormControl>
+                            <FormMessage>
+                                
+                            </FormMessage>
                         </FormItem>
     )}
                     />
