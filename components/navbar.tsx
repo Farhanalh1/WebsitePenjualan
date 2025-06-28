@@ -3,6 +3,7 @@ import { MainNav } from "./main-nav";
 import StoreSwitcher from "./store-switcher";
 import { redirect } from "next/navigation";
 import db from "@/lib/db";
+import { UserButton } from "@clerk/nextjs";
 
 const Navbar = async () => {
   const { userId} = await auth();
