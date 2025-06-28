@@ -2,7 +2,8 @@
 
 import { Image as ImageType } from "@/types";
 
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+// Hapus 'Tab' dari daftar import karena tidak digunakan secara langsung.
+import { TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import GalleryTab from "./gallery-tab";
 import Image from "next/image";
 
