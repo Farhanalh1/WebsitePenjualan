@@ -1,11 +1,11 @@
-import { auth, UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { MainNav } from "./main-nav";
 import StoreSwitcher from "./store-switcher";
 import { redirect } from "next/navigation";
 import db from "@/lib/db";
 
 const Navbar = async () => {
-  const { userId} = auth();
+  const { userId} = await auth();
 
   if (!userId) {
     redirect('/sign-in')
