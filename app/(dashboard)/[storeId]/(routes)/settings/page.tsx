@@ -1,7 +1,6 @@
 import db from "@/lib/db";
-import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import React from "react";
+import { auth } from "@clerk/nextjs/server";
 import { Settingsform } from "./components/settings-form";
 
 interface SettingsPageProps {
@@ -14,14 +13,14 @@ const SettingsPage: React.FC<SettingsPageProps> = async ({
     params
 }) => {
 
-    const {userId} = await auth();
+    const { userId } = await auth()
 
     if (!userId) {
         redirect('/sign-in')
     }
 
     const store = await db.store.findFirst({
-        where:{
+        where: {
             id: params.storeId,
             userId
         }
@@ -31,13 +30,14 @@ const SettingsPage: React.FC<SettingsPageProps> = async ({
         redirect('/')
     }
 
-    return(
+    return ( 
         <div className="flex-col">
             <div className="flex-1 space-y-4 p-8 pt-6">
                 <Settingsform initialData={store} />
             </div>
-
+            
         </div>
-    );
+     );
 }
+ 
 export default SettingsPage;
