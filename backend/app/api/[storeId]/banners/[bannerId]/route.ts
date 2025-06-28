@@ -82,7 +82,7 @@ export async function DELETE(
   { params }: { params: { storeId: string; bannerId: string } }
 ) {
   try {
-    const { userId } = auth();
+    const { userId } =await auth();
 
     if (!userId) {
       return new NextResponse("Unauthenticated", { status: 401 });

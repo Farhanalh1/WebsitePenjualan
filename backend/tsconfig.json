@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "target": "ES2017",
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".", // TETAPKAN INI PADA "." KARENA INI ADALAH ROOT PROYEK NEXT.JS SEKARANG (yaitu folder 'backend')
+    "paths": {
+      // Alias ini sekarang relatif terhadap folder 'backend' itu sendiri
+      // Jadi, `@/components/ui/*` akan mencari di `./components/ui/*` (yaitu backend/components/ui)
+      "@/*": ["./*"], // Ini penting untuk alias @/app, @/lib, dll. yang langsung di bawah backend
+      "@/app/*": ["./app/*"],
+      "@/components/*": ["./components/*"],
+      "@/components/ui/*": ["./components/ui/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/providers/*": ["./providers/*"]
+      // Tidak perlu lagi menambahkan 'backend/' di depan path di sini karena baseUrl sudah '.'
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+    // Tidak perlu exclude 'frontend', 'cms', 'dokumentasi' di sini
+    // karena tsconfig.json ini hanya berlaku untuk folder 'backend'
+  ]
+}
